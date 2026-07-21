@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Academic text indent for realistic journal layout */
+.text-indent {
+  text-indent: 1.75rem;
+  text-align: justify;
+}
+
+/* Don't indent the first paragraph of a section */
+h2 + p.text-indent,
+.border-t + p.text-indent,
+div > p.text-indent:first-of-type {
+  text-indent: 0 !important;
+}
+
+/* PDF Export Active State — applied during PDF generation */
+.pdf-export-active {
+  width: 720px !important;
+  max-width: 720px !important;
+  margin: 0 !important;
+  padding: 48px 64px !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: #FDFBF7 !important;
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+}
+
+.pdf-export-active h1 {
+  page-break-after: avoid;
+}
+
+.pdf-export-active h2,
+.pdf-export-active h3 {
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+.pdf-export-active p {
+  orphans: 3;
+  widows: 3;
+}
+
+.pdf-export-active svg {
+  page-break-inside: avoid;
+}
+
+/* Print media styles for fallback printing */
+@media print {
+  body {
+    background: white !important;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  .print\:border-0 {
+    border: 0 !important;
+  }
+  
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+  
+  .print\:p-0 {
+    padding: 0 !important;
+  }
+}
