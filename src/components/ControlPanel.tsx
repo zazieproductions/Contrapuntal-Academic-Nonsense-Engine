@@ -106,7 +106,7 @@ const PRESETS: PresetConfig[] = [
   },
   {
     name: "Voices in the Score",
-    field: "posttonal",
+    field: "voices-in-the-score-7",
     seed: "voices-in-the-score-7",
     madness: 85,
     drift: 92,
@@ -114,6 +114,11 @@ const PRESETS: PresetConfig[] = [
     authorLast: "Hargrave",
     inst: "Leuphana University"
   },
+  // ── Horror Presets ──────────────────────────────────────────────────
+  { name: "Cosmic Dread Archive", field: "cosmic", seed: "crawling-void-40", madness: 70, drift: 55, authorFirst: "Maxwell S.", authorLast: "Hargrave", inst: "Leuphana University" },
+  { name: "Gothic Ancestral Decay", field: "gothic", seed: "weeping-lady-41", madness: 45, drift: 25, authorFirst: "Maxwell S.", authorLast: "Hargrave", inst: "Leuphana University" },
+  { name: "Cellular Body Horror", field: "body", seed: "sentient-calcification-42", madness: 75, drift: 40, authorFirst: "Maxwell S.", authorLast: "Hargrave", inst: "Leuphana University" },
+  { name: "Folk Peat-Bog Horror", field: "folk", seed: "straw-man-43", madness: 55, drift: 35, authorFirst: "Maxwell S.", authorLast: "Hargrave", inst: "Leuphana University" },
   // ── Conservative / Dry ──────────────────────────────────────────────
   { name: "Conservative Schenkerian", field: "schenkerian", seed: "conservative-schenker-1", madness: 10, drift: 0, authorFirst: "Maxwell S.", authorLast: "Hargrave", inst: "Leuphana University" },
   { name: "Dry Set-Theoretic", field: "posttonal", seed: "dry-set-theory-2", madness: 8, drift: 0, authorFirst: "Maxwell S.", authorLast: "Hargrave", inst: "Leuphana University" },

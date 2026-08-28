@@ -25,6 +25,45 @@ const LOADING_MESSAGES = [
   "Preparing peer-review correspondence..."
 ];
 
+const HORROR_LOADING_MESSAGES = [
+  "Tethering dimensional coordinates...",
+  "Suturing flesh tissues...",
+  "Grafting cellular anomalies...",
+  "Decaying ancestral topiary gardens...",
+  "Whispering between the candle wax layers...",
+  "Sinking dry straw bodies into peat bog chambers...",
+  "Calculating shadow curvature indices...",
+  "Formulating non-Euclidean geometries..."
+];
+
+const DIARY_LOADING_MESSAGES = [
+  "Recalibrating ocular alignment metrics...",
+  "Halving almonds vertically...",
+  "Sanitizing braided audio interferences...",
+  "Compiling Chicago Manual of Style compliance heuristics...",
+  "Sieving sub-transient expectancies...",
+  "Anchoring Fabfilter EQ node constraints...",
+  "Fleshing out redundant archival logs..."
+];
+
+const UNDERGROUND_LOADING_MESSAGES = [
+  "Packing dubplates into foam tote...",
+  "Itemizing warehouse rental and cleaning balances...",
+  "Calibrating sub frequencies on the mono stack...",
+  "Stretching kick cuts across 8-beat bars...",
+  "Verifying Eastern Market Discord server tags...",
+  "Asserting mutual-aid consent frameworks..."
+];
+
+const SCHEMER_LOADING_MESSAGES = [
+  "Establishing proxy routes in Switzerland...",
+  "Mating EULA drafts with hidden debt clauses...",
+  "Scraping national public grief registries...",
+  "Lowballing property value tensors...",
+  "Erecting anti-government sat-shield landing pages...",
+  "Laundering transactional outputs via split-off mixers..."
+];
+
 export default function App() {
   // Generator State
   const [domain, setDomain] = useState<'music' | 'horror' | 'diary' | 'underground' | 'schemer'>('music');
@@ -139,49 +178,10 @@ export default function App() {
     setIsGenerating(true);
     setLoadingMsgIndex(0);
 
-    const horrorMsgs = [
-      "Tethering dimensional coordinates...",
-      "Suturing flesh tissues...",
-      "Grafting cellular anomalies...",
-      "Decaying ancestral topiary gardens...",
-      "Whispering between the candle wax layers...",
-      "Sinking dry straw bodies into peat bog chambers...",
-      "Calculating shadow curvature indices...",
-      "Formulating non-Euclidean geometries..."
-    ];
-
-    const diaryMsgs = [
-      "Recalibrating ocular alignment metrics...",
-      "Halving almonds vertically...",
-      "Sanitizing braided audio interferences...",
-      "Compiling Chicago Manual of Style compliance heuristics...",
-      "Sieving sub-transient expectancies...",
-      "Anchoring Fabfilter EQ node constraints...",
-      "Fleshing out redundant archival logs..."
-    ];
-
-    const undergroundMsgs = [
-      "Packing dubplates into foam tote...",
-      "Itemizing warehouse rental and cleaning balances...",
-      "Calibrating sub frequencies on the mono stack...",
-      "Stretching kick cuts across 8-beat bars...",
-      "Verifying Eastern Market Discord server tags...",
-      "Asserting mutual-aid consent frameworks..."
-    ];
-
-    const schemerMsgs = [
-      "Establishing proxy routes in Switzerland...",
-      "Mating EULA drafts with hidden debt clauses...",
-      "Scraping national public grief registries...",
-      "Lowballing property value tensors...",
-      "Erecting anti-government sat-shield landing pages...",
-      "Laundering transactional outputs via split-off mixers..."
-    ];
-
-    const activeMsgs = domain === 'horror' ? horrorMsgs : 
-                       domain === 'diary' ? diaryMsgs : 
-                       domain === 'underground' ? undergroundMsgs : 
-                       domain === 'schemer' ? schemerMsgs : 
+    const activeMsgs = domain === 'horror' ? HORROR_LOADING_MESSAGES : 
+                       domain === 'diary' ? DIARY_LOADING_MESSAGES : 
+                       domain === 'underground' ? UNDERGROUND_LOADING_MESSAGES : 
+                       domain === 'schemer' ? SCHEMER_LOADING_MESSAGES : 
                        LOADING_MESSAGES;
 
     // Cycle through loading messages
@@ -418,7 +418,11 @@ export default function App() {
 
                 <div className="space-y-3">
                   <h2 className="text-lg font-serif font-bold tracking-wide text-[#EFECE6]">
-                    {domain === 'horror' ? 'Compiling Horror Manuscript...' : 'Compiling Academic Manuscript...'}
+                    {domain === 'horror' ? 'Compiling Horror Manuscript...' : 
+                     domain === 'diary' ? 'Compiling Self-Audit Log...' : 
+                     domain === 'underground' ? 'Typesetting Underground Dispatch...' : 
+                     domain === 'schemer' ? 'Compiling Schemer Dossier...' : 
+                     'Compiling Academic Manuscript...'}
                   </h2>
                   
                   {/* Progress indicator */}
@@ -430,23 +434,20 @@ export default function App() {
                 {/* Witty Milestones Text */}
                 <div className="p-4 bg-[#221E1C] rounded border border-zinc-800/60 min-h-[76px] flex items-center justify-center shadow-inner">
                   <p className="text-xs font-serif font-medium italic text-red-200/85 leading-relaxed animate-pulse">
-                    {(domain === 'horror' 
-                      ? [
-                          "Tethering dimensional coordinates...",
-                          "Suturing flesh tissues...",
-                          "Grafting cellular anomalies...",
-                          "Decaying ancestral topiary gardens...",
-                          "Whispering between the candle wax layers...",
-                          "Sinking dry straw bodies into peat bog chambers...",
-                          "Calculating shadow curvature indices...",
-                          "Formulating non-Euclidean geometries..."
-                        ] 
-                      : LOADING_MESSAGES)[loadingMsgIndex]}
+                    {(domain === 'horror' ? HORROR_LOADING_MESSAGES : 
+                      domain === 'diary' ? DIARY_LOADING_MESSAGES : 
+                      domain === 'underground' ? UNDERGROUND_LOADING_MESSAGES : 
+                      domain === 'schemer' ? SCHEMER_LOADING_MESSAGES : 
+                      LOADING_MESSAGES)[loadingMsgIndex]}
                   </p>
                 </div>
 
                 <div className="text-[10px] text-zinc-600 tracking-widest uppercase font-bold">
-                  {domain === 'horror' ? 'Drafting Speculative Literary Work' : 'Preparing Manuscript for Publication'}
+                  {domain === 'horror' ? 'Drafting Speculative Literary Work' : 
+                   domain === 'diary' ? 'Filing Internal Compliance Log' : 
+                   domain === 'underground' ? 'Preparing Dispatch for Distribution' : 
+                   domain === 'schemer' ? 'Encrypting Predatory Operations Dossier' : 
+                   'Preparing Manuscript for Publication'}
                 </div>
 
               </div>
